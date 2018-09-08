@@ -1,0 +1,70 @@
+h1{
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(29,142,186);
+}
+
+#alerta{
+  margin-bottom: 0px;
+  margin-left: 410px;
+  color: red;
+}
+
+#caja {
+  margin-top: 0px;
+}
+
+#solucion{
+  font-size: 36pt;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 8px;
+}
+
+#letras_us{
+  font-size: 24pt;
+  display: inline-block;
+  margin-top: 50px;
+}
+
+#letras_usadas{
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+
+#imagen {
+  float: left;
+}
+
+#resultado{
+  font-size: 30pt;
+  color: red;
+}
+
+#boton_reinicio{
+  font-size: 16pt;
+  color: rgb(29,142,186);
+  position: fixed;
+  top: 400px;
+}
+
+#boton_reinicio:hover{
+  color: rgb(190, 190, 190);
+}
+
+.boton{
+  background-color: rgb(215, 215, 215);
+  border-width: 0.1em;
+  border-color: rgb(190, 190, 190);
+  border-radius: 4px;
+}
+
+.boton:hover{
+  background-color: rgb(135, 135, 135);
+  border-width: 0.1em;
+  border-color: rgb(99, 99, 99);
+  border-radius: 4px;
+  color: rgb(217, 217, 217);
+}

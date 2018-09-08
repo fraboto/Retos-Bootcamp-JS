@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fútbol Profesional Colombiano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1 id="titulo" class="text-center">Equipos del Fútbol Profesional Colombiano</h1>
+        <div class="row">
+            <select name="equipos" id="equipos" class="col-xs-12 col-sm-2 col-md-2 col-lg-2
+                col-xl-2 custom-select">
+                <option value="nacional">Atlético Nacional</option>
+                <option value="america">América de Cali</option>
+                <option value="millonarios">Millonarios</option>
+                <option value="tolima">Tolima</option>
+                <option value="santafe">Santa Fé</option>
+                <option value="medellin">Medellín</option>
+                <option value="pasto">Pasto</option>
+                <option value="cali">Cali</option>
+                <option value="alianza">Alianza Petrolera</option>
+                <option value="boyaca">Boyacá Chicó</option>
+                <option value="equidad">La Equidad</option>
+                <option value="huila">Atlético Huila</option>
+                <option value="leones">Leones</option>
+                <option value="aguilas">Águilas Pereira</option>
+                <option value="envigado">Envigado</option>
+                <option value="bucaramanga">Bucaramanga</option>
+                <option value="patriotas">Patriotas</option>
+                <option value="caldas">Once Caldas</option>
+                <option value="jaguares">Jaguares</option>
+                <option value="junior">Junior</option>
+            </select>
+            
+            <span id="nombre" class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 text-center
+                font-weight-bold text-uppercase border border-info"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                <div class="row border border-info border-bottom-0">
+                    <img src="" alt="" class="img-responsive text-center" id="escudo" width="200" height="200">
+                </div>
+
+                <div class="row text-left border border-info">
+                    <p>
+                        Ciudad: <span id="ciudad"></span><br>
+                        Estadio: <span id="estadio"></span><br>
+                        Estrellas: <span id="estrellas"></span><br>
+                        Presidente: <span id="presidente"></span><br>
+                    </p>  
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-10 col-md-10 col-lg-10 col-xl-10">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 mr-8 text-center border border-info">
+                    <p class="font-weight-bold">Director Técnico: <span id="tecnico"></span></p>
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 text-center font-weight-bold border border-info">
+                    Plantilla
+                </div>
+
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-1 text-center">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold
+                     border border-info border-bottom-0 border-right-0">Arqueros</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold
+                     border border-info border-bottom-0 border-right-0">Defensas</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold
+                     border border-info border-bottom-0 border-right-0">Mediocampistas</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold
+                     border border-info border-bottom-0">Delanteros</div>
+                </div>
+
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-1 text-center">
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-right-0"
+                        id="arqueros"></div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-right-0"
+                        id="defensas"></div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-right-0"
+                        id="mediocampistas"></div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info"
+                        id="delanteros"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <table class="table table-striped w-75 offset-2 mt-5">
+            <thead>
+                <tr>
+                    <th>Posición</th>
+                    <th>Nombre</th>
+                    <th>PJ</th>
+                    <th>G</th>
+                    <th>E</th>
+                    <th>P</th>
+                    <th>GF</th>
+                    <th>GC</th>
+                    <th>DG</th>
+                    <th>Pts</th>
+                </tr>
+            </thead>
+            <tbody id="cont_tabla">
+                
+            </tbody>
+    </table>            
+
+
+
+    <script src="fpc.js"></script>
+    <script src="fpc_tabla.js"></script>
+</body>
+</html>
+

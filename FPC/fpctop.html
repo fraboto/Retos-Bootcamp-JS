@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fútbol Profesional Colombiano</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <h1 class="text-center">Fútbol Profesional Colombiano</h1>
+
+    <div class="btn-group d-flex justify-content-center mt-3">
+        <button class="btn btn-secondary" id="boton_equipos">Equipos del FPC</button>
+        <button class="btn btn-secondary" id="boton_tablas">Tabla de posiciones del FPC</button>
+    </div>
+
+    <div class="container w-50" id="cont_eq">
+
+        <div class="row justify-content-center">
+            <select name="equipos" id="selec_equipos" class="col-xs-12 col-sm-4 col-md-4 col-lg-4
+            col-xl-4 custom-select mt-3">
+                <option value="nacional">Atlético Nacional</option>
+                <option value="america">América de Cali</option>
+                <option value="millonarios">Millonarios</option>
+                <option value="tolima">Tolima</option>
+                <option value="santafe">Santa Fé</option>
+                <option value="medellin">Medellín</option>
+                <option value="pasto">Pasto</option>
+                <option value="cali">Cali</option>
+                <option value="alianza">Alianza Petrolera</option>
+                <option value="boyaca">Boyacá Chicó</option>
+                <option value="equidad">La Equidad</option>
+                <option value="huila">Atlético Huila</option>
+                <option value="leones">Leones</option>
+                <option value="aguilas">Águilas Pereira</option>
+                <option value="envigado">Envigado</option>
+                <option value="bucaramanga">Bucaramanga</option>
+                <option value="patriotas">Patriotas</option>
+                <option value="caldas">Once Caldas</option>
+                <option value="jaguares">Jaguares</option>
+                <option value="junior">Junior</option>
+            </select>
+        </div>
+
+        <div class="row mt-3">
+
+            <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-center">
+                <img src="" alt="" id="escudo" class="img-fluid mw-100">
+            </div>
+
+            <div class="col col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-left">
+                <p>
+                    <span id="nombre" class="font-weight-bold text-uppercase" style="font-size: 20pt"></span>
+                    <br />
+                    <br />
+                    Ciudad: <span id="ciudad"></span><br>
+                    Estadio: <span id="estadio"></span><br>
+                    Estrellas: <span id="estrellas"></span><br>
+                    Presidente: <span id="presidente"></span><br>
+                    <span class="font-weight-bold text-uppercase">Director Técnico: </span><span id="tecnico"></span><br>
+                </p>  
+            </div>
+
+        </div>
+
+        <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-2 text-center font-weight-bold">
+                        PLANTILLA
+                </div>
+    
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-1 text-center">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold">Arqueros</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold">Defensas</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold">Mediocampistas</div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 mt-2 font-weight-bold">Delanteros</div>
+                </div>
+
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-1 text-center">
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-bottom-0
+                    border-right-0 border-left-0" id="arqueros"></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-bottom-0
+                    border-right-0 border-left-0" id="defensas"></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-bottom-0
+                    border-right-0 border-left-0" id="mediocampistas"></div>
+                    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 col-xl-3 border border-info border-bottom-0
+                    border-right-0 border-left-0" id="delanteros"></div>
+                </div>
+        </div>
+
+    </div>
+
+    <div class="container my-5" id="cont_tab">
+        <div class="btn-group d-flex justify-content-center mt-3">
+            <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#TablaLigaAguila">
+                Tabla de posiciones Liga Águila
+            </button>
+            <button type="button" class="btn btn-secondary" data-toggle="collapse" data-target="#TablaTorneoAguila">
+                Tabla de posiciones Torneo Águila
+            </button>
+        </div>
+        
+        <table class="table table-striped w-100 mt-5 collapse" id="TablaLigaAguila">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Nombre</th>
+                        <th>PJ</th>
+                        <th>G</th>
+                        <th>E</th>
+                        <th>P</th>
+                        <th>GF</th>
+                        <th>GC</th>
+                        <th>DG</th>
+                        <th>Pts</th>
+                    </tr>
+                </thead>
+                <tbody id="cont_tabla_liga">
+                    
+                </tbody>
+        </table>  
+
+        
+    </div>
+
+    <script src="fpc.js"></script>
+    <script src="fpc_tabla.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">
+    Simple collapsible
+</button>
+<div id="demo" class="collapse">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</div> -->
