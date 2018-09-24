@@ -78,7 +78,7 @@ function crearTarjetasPeliculas(informacion)
                                 </div>
                             </div>
                         </div>`;
-                        
+                        $("#cargando").hide();                        
                         contenedor.innerHTML = tarjetas;
                         indice++;
                         sessionStorage.setItem(asunto, tarjetas);
@@ -169,6 +169,7 @@ function crearTarjetasPlanetas(informacion)
                                 </div>
                             </div>
                         </div>`;
+                        $("#cargando").hide();
                         contenedor.innerHTML = tarjetas;
                         indice++;
                         sessionStorage.setItem(asunto, tarjetas);
@@ -263,6 +264,7 @@ function crearTarjetasEspecies(informacion)
                                 </div>
                             </div>
                         </div>`;
+                        $("#cargando").hide();
                         contenedor.innerHTML = tarjetas;
                         indice++;
                         sessionStorage.setItem(asunto, tarjetas);
@@ -357,7 +359,7 @@ function crearTarjetasVehiculos(informacion)
                             </div>
                         </div>`;
 
-
+                        $("#cargando").hide();
                         contenedor.innerHTML = tarjetas;
                         indice++;
                         sessionStorage.setItem(asunto, tarjetas);
@@ -371,6 +373,7 @@ function crearTarjetasPersonas(informacion)
     var tarjetas = "";
     var indice = 0;
     var clase = "";
+    var clase2 = "";
  
     informacion.forEach(x => 
         {
@@ -397,6 +400,7 @@ function crearTarjetasPersonas(informacion)
                                 .then(p =>
                                 {
                                     (persona.name === "Darth Vader") ? clase = "cancion" : clase = "";
+                                    (persona.name === "Darth Vader") ? clase2 = "parar" : clase2 = "";
                                         
                                     var id = persona.url.charAt(28);
                                     var id2 = persona.url.charAt(29);
@@ -451,7 +455,7 @@ function crearTarjetasPersonas(informacion)
                                                             
                                                             <!-- Pie del Modal -->
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal" id="${clase2}">Cerrar</button>
                                                             </div>
                                                             
                                                         </div>
@@ -461,9 +465,11 @@ function crearTarjetasPersonas(informacion)
                                             </div>
                                         </div>
                                     </div>`;
+                                    $("#cargando").hide();
                                     contenedor.innerHTML = tarjetas;
                                     indice++;
                                     $("#cancion").on("click",audi);
+                                    $("#parar").on("click",audistp);
                                     sessionStorage.setItem(asunto, tarjetas);                            
                                 });
                             });
@@ -473,8 +479,14 @@ function crearTarjetasPersonas(informacion)
 }
 
 
+
 function audi()
 {
     $("#son").trigger("play");
+}
+
+function audistp()
+{
+    $("#son").trigger("pause");
 }
 /* */   

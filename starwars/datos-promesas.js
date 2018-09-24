@@ -98,6 +98,7 @@ function getPeticion(url, campo)
 
 if(sessionStorage.getItem(asunto))
 {
+    $("#cargando").hide();
     contenedor.innerHTML = sessionStorage.getItem(asunto);
     (asunto === "Personajes") ? $("#cancion").on("click",audi) : asunto = asunto;
 }
