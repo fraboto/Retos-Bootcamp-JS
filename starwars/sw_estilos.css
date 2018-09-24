@@ -1,0 +1,193 @@
+body
+{
+    background-image: url(imagenes/background.png);
+    font-family: "Inconsolata", sans-serif;
+    color: whitesmoke;
+}
+
+h1
+{
+    font-family: "Russo One", sans-serif;
+}
+
+h4
+{
+    font-size: 14pt;
+    text-transform: uppercase;
+}
+
+p 
+{
+    font-size: 12pt;
+}
+
+hr
+{ 
+    display: block;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.boton-redondo
+{
+    width: 100px;
+    height: 100px;
+    color: whitesmoke;
+    border-radius: 50%;
+    border: 2px;
+    border-style: groove;
+    border-color: gold;
+}
+
+.navigate
+{
+    width: 50px;
+    height: 50px;
+}
+
+.boton:hover
+{
+    border-style: ridge;
+    border-color: goldenrod;
+    opacity: 0.8;
+    box-shadow: 4px 4px 8px 0 rgba(255, 255, 255, 0.2);
+    text-decoration: underline;
+}
+
+.boton-inicio
+{
+    width: 120px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.boton-inicio:hover
+{
+    box-shadow: 4px 0 8px 0 rgba(255, 255, 255, 0.2), -4px 0 8px 0 rgba(255, 255, 255, 0.2);
+}
+
+.card
+{
+    background-color: inherit;
+    border: 1px;
+    border-style: solid;
+    border-color: whitesmoke;
+}
+
+.card-planetas
+{
+    height: 430px;
+}
+
+.card-especies
+{
+    height: 430px;
+}
+
+.card-vehiculos
+{
+    height: 240px;
+}
+
+.card-body
+{
+    height: 220px;
+}
+
+.card-body-planetas
+{
+    position: absolute;
+    top: 160px;
+}
+
+.card-body-especie
+{
+    position: absolute;
+    top: 140px;
+}
+
+.card-img-top
+{
+    max-height: 450px;
+}
+
+.card-img-top-planetas
+{
+    max-height: 170px;
+}
+
+.card-img-top-personas
+{
+    max-height: 150px;
+}
+
+.modal-content
+{
+    background-image: url(imagenes/background.png);
+    background-size: cover;
+    border-style: solid;
+    border-color: whitesmoke;
+    text-align: justify;
+}
+
+.modal-body
+{
+    font-size: 13pt;
+}
+
+.close
+{
+    color: whitesmoke;
+}
+
+.pie
+{
+    position: absolute;
+    top: 220px;
+}
+
+.pie-ships
+{
+    position: absolute;
+    top: 190px;
+}
+
+#boton-personas
+{
+    background-image: url(imagenes/luke_skywalker.jpg);
+    background-size: cover;
+}
+
+#boton-peliculas
+{
+    background-image: url(imagenes/starwars_movie.jpg);
+    background-size: cover;
+}
+
+#boton-planetas
+{
+    background-image: url(imagenes/planeta.jpg);
+    background-size: cover;
+}
+
+#boton-especies
+{
+    background-image: url(imagenes/chewbacca.jpg);
+    background-size: cover;
+}
+
+#boton-naves
+{
+    background-image: url(imagenes/nave_sw.jpg);
+    background-size: cover;
+}
+
+#boton-vehiculos
+{
+    background-image: url(imagenes/sandcrawler.jpg);
+    background-size: cover;
+}

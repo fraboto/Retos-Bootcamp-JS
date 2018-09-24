@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Star Wars Wiki</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="sw_estilos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Russo+One" rel="stylesheet">
+    
+</head>
+<body>
+    <!-- grilla que permite desplegar los botones para dirigirse a las diferentes páginas -->
+    <div class="container-fluid">
+        
+        <!-- Primera fila de la grilla -->                    
+        <div class="row mt-3">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+
+            <!-- Botón para personas -->            
+            <div class="col-4 d-flex justify-content-center">
+                <a href="personas.html">
+                    <button class="boton boton-redondo" id="boton-personas">Personas</button>
+                </a>
+            </div>
+
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+        </div>
+
+        <!-- Segunda fila de la grilla -->                    
+        <div class="row">
+            <div class="col-2"></div>
+
+            <!-- Botón para planetas -->            
+            <div class="col-2 d-flex justify-content-center">
+                <a href="planetas.html">
+                    <button class="boton boton-redondo" id="boton-planetas">Planetas</button>
+                </a>
+            </div>
+
+            <div class="col-4"></div>
+
+            <!-- Botón para películas -->            
+            <div class="col-2 d-flex justify-content-center">
+                <a href="peliculas.html">
+                    <button class="boton boton-redondo" id="boton-peliculas">Películas</button>
+                </a>
+            </div>
+            <div class="col-2"></div>            
+        </div>
+
+        <!-- Tercera fila de la grilla -->                    
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+            <!-- Imágen ppal -->
+            <div class="col-4">
+                <img src="http://img.actucine.com/wp-content/uploads/2013/08/Star-Wars.gif" alt="sw-gif" id="gif" class="mw-100" style="border-radius: 38%;"/>
+                <img src="imagenes/starwars_logo.png" class="mw-100" id="imagen-ppal" alt="">
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>    
+        </div>
+
+        <!-- Cuarta fila de la grilla -->                    
+        <div class="row">
+            <div class="col-2"></div>
+
+            <!-- Botón para especies -->
+            <div class="col-2 d-flex justify-content-center">
+                <a href="especies.html">
+                    <button class="boton boton-redondo" id="boton-especies">Especies</button>
+                </a>
+            </div>
+            
+            <div class="col-4"></div>
+
+            <!-- Botón para vehículos -->            
+            <div class="col-2 d-flex justify-content-center">
+                <a href="vehiculos.html">
+                    <button class="boton boton-redondo" id="boton-vehiculos">Vehiculos</button>
+                </a>
+            </div>
+            <div class="col-2"></div>    
+        </div>
+
+        <!-- Quinta fila de la grilla -->                   
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-2"></div>
+
+            <!-- Botón para naves -->
+            <div class="col-4 d-flex justify-content-center">
+                <a href="naves.html">
+                    <button class="boton boton-redondo" id="boton-naves">Naves</button>
+                </a>
+            </div>
+            <div class="col-2"></div>
+            <div class="col-2"></div>    
+        </div>        
+        
+    </div>
+
+    <audio id="song" src="audio/star-wars-theme-song.mp3" type="audio/mpeg"></audio>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="media.js"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planetas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="sw_estilos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Russo+One" rel="stylesheet">    
+</head>
+<body>
+    
+    <!-- Barra de navegación superior -->
+    <ul class="nav justify-content-center my-2">
+        <li class="nav-item mr-5">
+            <a class="nav-link active" href="index.html" title="Página de inicio">
+                <button class="boton-inicio navbar-toggler" type="button">
+                    <img src="imagenes/starwars_logo.png" alt="" class="nav-item mw-100">
+                </button>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link active" href="personas.html">
+                <button class="boton boton-redondo navigate" id="boton-personas" title="Personas"></button>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="peliculas.html">
+                <button class="boton boton-redondo navigate" id="boton-peliculas" title="Películas"></button>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="especies.html">
+                <button class="boton boton-redondo navigate" id="boton-especies" title="Especies"></button>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="vehiculos.html">
+                <button class="boton boton-redondo navigate" id="boton-vehiculos" title="Vehiculos"></button>
+            </a>
+        </li>   
+        <li class="nav-item">
+            <a class="nav-link active" href="naves.html">
+                <button class="boton boton-redondo navigate" id="boton-naves" title="Naves"></button>
+            </a>
+        </li>     
+    </ul>
+
+
+    <div class="text-center" style="color: white">
+        <h1 id="titulo-ppal">Planetas</h1>
+        <p id="planetas"></p>
+    </div>
+
+    <div class="container" id="cont-planetas">
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="imagenes/imgs.js"></script>
+    <script src="tarjetas.js"></script>
+    <script src="datos-promesas.js"></script>
+</body>
+</html>
