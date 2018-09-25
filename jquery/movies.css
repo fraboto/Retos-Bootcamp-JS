@@ -1,0 +1,33 @@
+h1
+{
+    font-size: 35pt;
+    font-family: 'Bangers', cursive;
+    margin: 30px 0px;
+}
+
+body
+{   
+    font-family: 'Roboto', cursive;
+    font-size: 20pt;
+}
+
+#cont-busqueda
+{
+    display: none;
+}
+
+#total-resultados
+{
+    font-size: 10pt;
+    color: gray;
+}
+
+.img-busqueda
+{
+    height: 80px;
+}
+
+.ano-busqueda
+{
+    font-size: 11pt;
+}
