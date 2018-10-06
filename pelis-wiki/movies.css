@@ -22,6 +22,16 @@ body
     color: gray;
 }
 
+.titulos
+{
+    color: rgb(0, 6, 43);
+}
+
+.titulos:hover
+{
+    color: rgb(115, 117, 131);
+}
+
 .img-busqueda
 {
     height: 80px;
@@ -30,4 +40,14 @@ body
 .ano-busqueda
 {
     font-size: 11pt;
+}
+
+.info-pelicula
+{
+    font-size: 12pt;
+}
+
+#accordion
+{
+    font-size: 12pt;
 }

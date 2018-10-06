@@ -2,21 +2,24 @@ const API_KEY = "8309ed66";
 const API_ENDPOINT = "http://www.omdbapi.com/";
 var tipo_busqueda = "";
 var resultados = "";
+var detalles = "";
+var temp = "";
 var pagina_busqueda = 1;
 var criterio;
 
 $(function()
 {
     $("#cont-busqueda").hide();
+    $("#cont-info").hide();
     $("#boton-volver").hide();
     $("#boton-volver-bus").hide();
     $("#busqueda").keyup(buscar);
     $("#boton-buscar").on("click", buscar);
-    $("#boton-volver").on("click", volver)
-    $("#boton-volver-bus").on("click", volver)
-    $("#boton-pel").on("click", establecerBusqueda)
-    $("#boton-ser").on("click", establecerBusqueda)
-    $("#boton-ep").on("click", establecerBusqueda)
+    $("#boton-volver").on("click", volver);
+    $("#boton-volver-resultados").on("click", volverBusqueda);
+    $("#boton-volver-bus").on("click", volver);
+    $("#boton-pel").on("click", establecerBusqueda);
+    $("#boton-ser").on("click", establecerBusqueda);
 })
 
 function establecerBusqueda(e)
@@ -31,15 +34,10 @@ function establecerBusqueda(e)
         $("#busqueda").attr("placeholder", "titulo de la película");
         tipo_busqueda = "movie";
     }
-    else if(e.target.id === "boton-ser")
+    else    
     {
         $("#busqueda").attr("placeholder", "titulo de la serie");
         tipo_busqueda = "series";
-    }
-    else
-    {
-        $("#busqueda").attr("placeholder", "titulo del episodio");
-        tipo_busqueda = "episode";
     }
 }
 
@@ -49,11 +47,22 @@ function volver()
     $("#resultado").html(resultados);
     $("#cont-busqueda").hide();
     $("#boton-volver").hide();
+    $("#boton-volver-resultados").hide();
     $("#cont-clasificacion").show();
     $("#espacio-volver").show();
     $("#busqueda").val("");
     $("#paginacion").html("");
     $("#total-resultados").html("");
+}
+
+function volverBusqueda()
+{
+    detalles = ``;
+    $("#detalle").html(temp);
+    temp = ``;
+    $("#temporadas").html(temp);
+    $("#cont-info").hide();
+    $("#cont-buscador").show();
 }
 
 function buscar(evento)
@@ -62,14 +71,26 @@ function buscar(evento)
     {
         pagina_busqueda = 1;
         criterio = $("#busqueda").val();
-        getPeliculas(criterio, pagina_busqueda);
+        getDatosDB(criterio, pagina_busqueda);
     }
 }
 
-function getPeliculas(cri, pagina)
+function getDatosDB(cri, pagina)
 {
     reiniciarBuscador();
 
+    $("#espacio-volver").hide();
+    $("#boton-volver-bus").show();
+    $("#total-resultados").hide();
+
+    establecerPeticionBusqueda(cri, pagina)
+    
+}
+
+function establecerPeticionBusqueda(cri, pagina)
+{
+    resultados = "";
+    $("#resultado").html(resultados);
     $.ajax({
         type: "GET",
         url: API_ENDPOINT,
@@ -84,10 +105,6 @@ function getPeliculas(cri, pagina)
     })
     .done(function(info)
     {
-        $("#espacio-volver").hide();
-        $("#boton-volver-bus").show();
-        $("#total-resultados").hide();
-
         if(info.Response === "True")
         {
             listarPeliculas(info);
@@ -122,7 +139,7 @@ function listarPeliculas(info)
             resultados +=  `<div class="media lista-busqueda my-3">
                                 ${poster}
                                 <div class="media-body">
-                                    <h5 class="my-0">${resultado.Title}</h5>
+                                    <h5 class="my-0 titulos" onclick='cambioVista("${resultado.imdbID}")'>${resultado.Title}</h5>
                                     <span class="ano-busqueda my-0">${resultado.Year}</span>
                                 </div>
                             </div>`;
@@ -132,20 +149,20 @@ function listarPeliculas(info)
     
     $("#resultado").html(resultados);
     $("#paginacion").html(pag);
-    $("#boton-siguiente").on("click", siguientePagina)
-    $("#boton-anterior").on("click", anteriorPagina)
+    $("#boton-siguiente").on("click", siguientePagina);
+    $("#boton-anterior").on("click", anteriorPagina);
 }
 
 function siguientePagina()
 {   
     pagina_busqueda++;
-    getPeliculas(criterio, pagina_busqueda);
+    establecerPeticionBusqueda(criterio, pagina_busqueda);
 }
 
 function anteriorPagina()
 {   
     pagina_busqueda--;
-    getPeliculas(criterio, pagina_busqueda);
+    establecerPeticionBusqueda(criterio, pagina_busqueda);
 }
 
 function reiniciarBuscador()
