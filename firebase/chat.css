@@ -1,0 +1,49 @@
+#msg
+{
+    background-color: rgb(18, 146, 155);
+    height: 550px;
+    border-radius: 1%;
+}
+
+#cont-mensajes
+{
+    height: 400px;
+    overflow: auto;
+    border-radius: 1%;
+}
+
+.mensaje
+{
+    background-color: rgb(222, 222, 222);
+    border-radius: 1%;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Roboto Slab', serif;
+}
+
+p
+{
+    font-family: 'Lato', sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
