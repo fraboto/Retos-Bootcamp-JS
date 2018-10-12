@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,98 +6,166 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Retos Francisco Bohórquez</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Source+Sans+Pro:400i" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6
+        {
+            font-family: 'Lato', sans-serif;
+        }
         body
         {
-            font-family: 'Merriweather', serif;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        #foot
+        {
+            background-color: rgba(15, 15, 15, 0.95);
+            color: whitesmoke;
+        }
+
+        footer a
+        {
+            color: rgb(105, 105, 105);
+        }
+
+        footer a:hover
+        {
+            color: gray
         }
     </style>
 </head>
 <body>
-    <div class="container w-50 mb-5 mt-3">
+    <header>
+        <nav class="navbar navbar-dark bg-dark" id="navigation-bar">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Francisco Bohórquez</a>
+            </div>
+        </nav>
+    </header>
+    <figure>
+        <img src="imagenes/bootcamp.jpg" alt="js logo" style="width: 100%;">
+    </figure>
+    <div class="container mb-5 mt-3 px-5">
 
-        <div class="row d-flex justify-content-center">
-            <h1>Retos del Bootcamp</h1>
+        <div class="row d-flex justify-content-center mt-5 mb-3">
+            <h1 class="text-center">Bootcamp Fullstack JavaScript</h1>
         </div>
 
-        <div class="card row mt-5">
-            <div class="card-body bg-light">
-                <h4 class="card-title text-center">Chat</h4>
-                <p class="card-text">
-                Prueba desde la interfaz de un chat el almacenamiento de datos y su actualización en tiempo real en la base de datos de Google, Firebase!
+        <div class="row p-3 mb-3 border border-secondary" style="border-radius: 5px;">
+            <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                <h4 class="text-center"><strong>CHAT</strong></h4>
+                <p class="text-justify">
+                    Prueba desde la interfaz de un chat el almacenamiento de datos y su actualización en tiempo real en la base de datos de Google, Firebase!
                 </p>
-                <div class="row">
-                    <a href="firebase/index.html" class="card-link col"><button class="btn btn-info">Conoce más!</button></a>
-                </div>
+                <a href="firebase/index.html"><button class="btn btn-info my-3">Conoce más!</button></a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
+                <figure>
+                    <img src="imagenes/chat.png" alt="imagen chat" style="border-radius: 50%; max-width: 100%;">
+                </figure>
             </div>
         </div>
 
-        <div class="card row mt-5">
-            <div class="card-body bg-light">
-                <h4 class="card-title text-center">PELIS - WIKI</h4>
-                <p class="card-text">
-                Conoce toda la información sobre tus películas y series favoritas: Géneros, Director, Actores, Guionistas, Trama, Series, Episodios, Calificaciones y mucho más.
+        <div class="row mb-3 p-3 border border-secondary" style="border-radius: 5px;">
+            <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                <h4 class="text-center"><strong>PELIS - WIKI</strong></h4>
+                <p class="text-justify">
+                    Conoce toda la información sobre tus películas y series favoritas: Géneros, Director, Actores, Guionistas, Trama, Series, Episodios, Calificaciones y mucho más.
                 </p>
-                <div class="row">
-                    <a href="pelis-wiki/index.html" class="card-link col"><button class="btn btn-info">Conoce más!</button></a>
-                </div>
+                <a href="pelis-wiki/index.html"><button class="btn btn-info my-3">Conoce más!</button></a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
+                <figure>
+                    <img src="imagenes/movie.png" alt="imagen chat" style="border-radius: 50%; max-width: 100%;">
+                </figure>
             </div>
         </div>
 
-        <div class="card row mt-5">
-            <div class="card-body bg-light">
-                <h4 class="card-title text-center">STAR - WARS</h4>
-                <p class="card-text">
-                Conoce un poco más acerca de uno de los universos cinematográficos más grande de todos los tiempos. Mira los personajes, las películas, los planetas, las especies, las naves y los vehículos que incorpora esta gran saga del séptimo arte.
+        <div class="row mb-3 p-3 border border-secondary" style="border-radius: 5px;">
+            <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                <h4 class="text-center"><strong>STAR - WARS</strong></h4>
+                <p class="text-justify">
+                        Conoce un poco más acerca de uno de los universos cinematográficos más grande de todos los tiempos. Mira los personajes, las películas, los planetas, las especies, las naves y los vehículos que incorpora esta gran saga del séptimo arte.
                 </p>
-                <div class="row">
-                    <a href="starwars/index.html" class="card-link col"><button class="btn btn-info">Conoce más!</button></a>
-                </div>
+                <a href="star-wars/index.html"><button class="btn btn-info my-3">Conoce más!</button></a>
             </div>
-        </div>
-        
-        <div class="card row mt-3">
-            <div class="card-body bg-light">
-              <h4 class="card-title text-center">Ahorcado</h4>
-              <p class="card-text">
-                Primer reto del Bootcamp: Juego del ahorcado.
-              </p>
-              <a href="ahorcado/index.html" class="card-link"><button class="btn btn-info">Ir al ahorcado</button></a>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
+                <figure>
+                    <img src="imagenes/sw.png" alt="imagen chat" style="border-radius: 50%; max-width: 100%;">
+                </figure>
             </div>
         </div>
 
-        <div class="card row mt-5">
-            <div class="card-body bg-light">
-                <h4 class="card-title text-center">Fútbol Profesional Colombiano. FPC</h4>
-                <p class="card-text">
-                Segundo reto del Bootcamp: Página que muestra información de los equipos (datos, plantilla, estadio, posiciones)
-                de la mejor liga de fútbol del mundo.
+        <div class="row mb-3 p-3 border border-secondary" style="border-radius: 5px;">
+            <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                <h4 class="text-center"><strong>Fútbol Profesional Colombiano. FPC</strong></h4>
+                <p class="text-justify">
+                        Segundo reto del Bootcamp: Página que muestra información de los equipos (datos, plantilla, estadio, posiciones).
                 </p>
-                <a href="FPC/index.html" class="card-link"><button class="btn btn-info">Ver FPC</button></a>
+                <a href="FPC/index.html"><button class="btn btn-info my-3">Conoce más!</button></a>
+            </div>
+            <div class="ccol-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
+                <figure>
+                    <img src="imagenes/fpc.png" alt="imagen chat" style="border-radius: 50%; max-width: 100%;">
+                </figure>
+            </div>
+        </div>
+       
+        <div class="row mb-3 p-3 border border-secondary" style="border-radius: 5px;">
+            <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                <h4 class="text-center"><strong>AHORCADO</strong></h4>
+                <p class="text-justify">
+                        Primer reto del Bootcamp: Juego del ahorcado.                
+                </p>
+                <a href="ahorcado/"><button class="btn btn-info my-3">Conoce más!</button></a>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
+                <figure>
+                    <img src="imagenes/ahorcado.png" alt="imagen chat" style="border-radius: 50%; max-width: 100%;">
+                </figure>
             </div>
         </div>
 
-        <div class="card row mt-5">
-            <div class="card-body bg-light">
-                <h4 class="card-title text-center">Extras</h4>
-                <p class="card-text">
-                Extras: Pruebas varias hechas por medio de canvas. Crea diseños, dibuja con el teclado, dibuja con el mouse, e incluso,
-                ¡¡juega!! Perdón por los errores, fueron versiones para hacer algunas pruebas y aprender.
+        <div class="row mb-3 p-3 border border-secondary" style="border-radius: 5px;">
+            <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                <h4 class="text-center"><strong>EXTRAS</strong></h4>
+                <p class="text-justify">
+                        Extras: Pruebas varias hechas por medio de canvas. Crea diseños, dibuja con el teclado, dibuja con el mouse, e incluso, ¡¡juega!! Perdón por los errores, fueron versiones para hacer algunas pruebas y aprender.
                 </p>
-                <div class="row">
-                    <a href="dibujos/dibujo.html" class="card-link col"><button class="btn btn-info">Dibuja un patrón</button></a>
-                    <a href="dibujos/dibujo_teclado.html" class="card-link col"><button class="btn btn-info">Dibuja con el teclado</button></a>
-                    <a href="dibujos/dibujo_mouse.html" class="card-link col"><button class="btn btn-info">Dibuja con el mouse</button></a>
+                <div class="row text-center my-3">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-1">
+                        <a href="dibujos/dibujo.html" class="card-link col"><button class="btn btn-info">Dibuja un patrón</button></a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-1">
+                        <a href="dibujos/dibujo_mouse.html" class="card-link col"><button class="btn btn-info">Dibuja con el mouse</button></a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-1">
+                        <a href="dibujos/dibujo_teclado.html" class="card-link col"><button class="btn btn-info">Dibuja con el teclado</button></a>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 p-1">
+                        <a href="dibujos/dibujo_canvas_teclado.html" class="card-link col"><button class="btn btn-info">Juega a alimentar al lobo</button></a>
+                    </div>
                 </div>
-                <div class="row mt-3">
-                    <a href="dibujos/dibujo_canvas_teclado.html" class="card-link col"><button class="btn btn-info">Juega a alimentar al lobo</button></a>
-                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center align-items-center">
+                <figure>
+                    <img src="imagenes/dibujo.png" alt="imagen chat" style="border-radius: 50%; max-width: 100%;">
+                </figure>
             </div>
         </div>
 
     </div>
+
+    <footer id="foot" class="mt-5 px-5 d-flex justify-content-between">
+        <p>Francisco Bohórquez</p>
+        <p>Designed and made by <a href="#">@franciscobohorquez</a></p>
+    </footer>
 </body>
 </html>
