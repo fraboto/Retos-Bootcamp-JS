@@ -3,17 +3,34 @@ data.append("api_secret", "888de1e77b4da08277f71fcc86f5c032");
 data.append("number", "573003096626");
 data.append("body", "Hola");
 
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
+var api_key = "b29989d2";
+var url = `https://api4.apidaze.io/${api_key}/sms/send`;
 
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
+function getPeticion(url)
+{
+    return new Promise(function(resolve, reject)
+    {
+        var peticion = new XMLHttpRequest();
+        peticion.onload = function()
+        {
+            resolve(peticion.responseText);
+        }
+        peticion.onerror = function()
+        {
+            reject("Error");
+        }
+        peticion.open("POST", url, true);
+        //peticion.setRequestHeader("llave": "valor"); Se usa para definir una propiedad de autenticación u otras características
+        peticion.send(data);
+    });
+}
+
+getPeticion(url)
+.then(function(response)
+{
+  console.log(response);
+})
+.catch(function(response)
+{
+  console.log("Error", response);
 });
-
-xhr.open("POST", "https://api4.apidaze.io/b29989d2/sms/send");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("Postman-Token", "ae83c03b-6844-4c5b-8db4-d147fdd1fa0e");
-
-xhr.send(data);
