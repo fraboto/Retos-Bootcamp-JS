@@ -1,0 +1,24 @@
+<div class="row">
+  <h1 class="center-align">Mascotas</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <p>Buscar por: <strong>{{ tipo_busqueda | uppercase }}</strong>
+    </p>
+    <p>
+      <button class="btn-small waves-effect indigo" (click)="this.tipo_busqueda=''">general</button>
+      <button class="btn-small waves-effect indigo" (click)="this.tipo_busqueda='nombre'">nombre</button>
+      <button class="btn-small waves-effect indigo" (click)="this.tipo_busqueda='tipo'">tipo</button>
+    </p>
+    <div class="input-field">
+      <label for="buscar">Buscar mascota</label>
+      <input id="buscar" class="input-field" type="text" [(ngModel)]="query">
+    </div>
+  </div>
+  <div class="row">
+    <p *ngFor="let pet of pets | search: query : tipo_busqueda; let i = index">{{pet.key+1}}. <strong><a routerLink="/perfil/{{ pet.key }}" class="indigo-text">{{ pet.nombre }}</a></strong> - {{ pet.tipo | emoji }}</p>
+  </div>
+</div>
+
+  

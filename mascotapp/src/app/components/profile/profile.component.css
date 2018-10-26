@@ -1,0 +1,15 @@
+.container
+{
+    margin-top: 1rem;
+}
+
+.btn-small
+{
+    margin-bottom: 1rem;
+}
+
+#editar:hover
+{
+    background-color: #dedede;
+    border-radius: 0.2rem;
+}

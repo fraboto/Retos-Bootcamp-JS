@@ -1,0 +1,26 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h3 class="center-align">Mascotapp</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="input-field">
+				<input type="text" id="post">
+				<label for="post">Publica algo....</label>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<ul class="collection">
+			<li class="collection-item avatar" *ngFor="let post of posts">
+				<img *ngIf="!this.petsService.getPetByKey(post.author).image" src="./../../assets/img/avatar.png" alt="avatar" class="circle">
+            	<img *ngIf="this.petsService.getPetByKey(post.author).image" src="{{ this.petsService.getPetByKey(post.author).image }}" alt="foto de perfil de {{ this.petsService.getPetByKey(post.author).nombre }}" class="circle">
+				<span><b>{{ this.petsService.getPetByKey(post.author).nombre }}</b></span><br />
+				<p><small>{{ post.date | date: 'medium' }}</small></p>
+				<p>{{ post.text }}</p>
+			</li>
+		</ul>
+	</div>
+</div>

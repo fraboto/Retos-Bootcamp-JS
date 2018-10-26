@@ -1,0 +1,13 @@
+#logo-login
+{
+    background-image: linear-gradient(to right top, #3f51b5, #7879c8, #a7a3da, #d4d0ed, #ffffff);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid whitesmoke;
+    width: 50%
+}
+
+.container
+{
+    margin-top: 5rem;
+}

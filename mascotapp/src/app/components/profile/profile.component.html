@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col s3">
+      <img *ngIf="!pet.image" src="./../../assets/img/avatar.png" alt="avatar" class="circle responsive-img">
+      <img *ngIf="pet.image" src="{{ pet.image }}" alt="foto de perfil de {{ pet.nombre }}" class="circle responsive-img">
+      <div class="row">
+        <div class="col s10">
+          <p class="center-align"><b>{{ pet.nombre }} {{ pet.tipo | emoji }}</b></p>
+        </div>
+        <div class="col s2">
+          <p class="right-align" (click)="action='edit'"><i class="material-icons" id="editar">edit</i></p>
+        </div>
+      </div>
+    </div>
+    <div class="col s9" *ngIf="action==='view'">
+      <div  class="input-field">
+        <input type="text" id="post">
+        <label for="post">Publica algo....</label>
+      </div>
+      
+      <ul class="collection">
+        <li class="collection-item avatar" *ngFor="let post of petPosts">
+          <img *ngIf="!pet.image" src="./../../assets/img/avatar.png" alt="avatar" class="circle responsive-img">
+          <img *ngIf="pet.image" src="{{ pet.image }}" alt="foto de perfil de {{ pet.nombre }}" class="circle responsive-img">
+          <span><b>{{ pet.nombre }}</b></span><br />
+          <p><small>{{ post.date | date: 'medium' }}</small></p>
+          <p>{{ post.text }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col s9" *ngIf="action==='edit'">
+      <div class="input-field">
+        <b>Nombre:</b> <input type="text" id="nombre" [(ngModel)]="pet.nombre" placeholder="">
+      </div>
+      <div class="input-field">
+        <b>Tipo:</b> <input type="text" id="tipo" disabled [(ngModel)]="pet.tipo" placeholder="">
+      </div>
+      <div class="input-field">
+        <b>Email:</b> <input type="email" id="email" disabled [(ngModel)]="pet.email" placeholder="">
+      </div>
+      <button class="btn-small indigo" (click)="action='view'">Guardar cambios</button>
+    </div>
+  </div>
+</div>
