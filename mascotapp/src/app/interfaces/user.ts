@@ -1,0 +1,10 @@
+export interface User {
+    name?: string;
+    last_name?: string;
+    username?: string;
+    email?: string;
+    pets?: any[];
+    uid?: any; 
+    provider?: string;
+    image?: any;
+}

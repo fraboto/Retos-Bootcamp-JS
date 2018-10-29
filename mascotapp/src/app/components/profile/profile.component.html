@@ -1,11 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col s3">
-      <img *ngIf="!pet.image" src="./../../assets/img/avatar.png" alt="avatar" class="circle responsive-img">
-      <img *ngIf="pet.image" src="{{ pet.image }}" alt="foto de perfil de {{ pet.nombre }}" class="circle responsive-img">
+    <div *ngIf="user" class="col s3">
+      <img *ngIf="!user.image" src="./../../assets/img/avatar.png" alt="avatar" class="circle responsive-img">
+      <img *ngIf="user.image" src="{{ user.image }}" alt="foto de perfil de {{ user.username }}" class="circle responsive-img">
       <div class="row">
         <div class="col s10">
-          <p class="center-align"><b>{{ pet.nombre }} {{ pet.tipo | emoji }}</b></p>
+          <p class="center-align"><b>{{ user.username }}</b></p>
         </div>
         <div class="col s2">
           <p class="right-align" (click)="action='edit'"><i class="material-icons" id="editar">edit</i></p>
@@ -17,29 +17,26 @@
         <input type="text" id="post">
         <label for="post">Publica algo....</label>
       </div>
-      
-      <ul class="collection">
-        <li class="collection-item avatar" *ngFor="let post of petPosts">
-          <img *ngIf="!pet.image" src="./../../assets/img/avatar.png" alt="avatar" class="circle responsive-img">
-          <img *ngIf="pet.image" src="{{ pet.image }}" alt="foto de perfil de {{ pet.nombre }}" class="circle responsive-img">
-          <span><b>{{ pet.nombre }}</b></span><br />
-          <p><small>{{ post.date | date: 'medium' }}</small></p>
-          <p>{{ post.text }}</p>
-        </li>
-      </ul>
     </div>
 
     <div class="col s9" *ngIf="action==='edit'">
       <div class="input-field">
-        <b>Nombre:</b> <input type="text" id="nombre" [(ngModel)]="pet.nombre" placeholder="">
+        <b>Nombre:</b> <input type="text" id="nombre" [(ngModel)]="user.name" placeholder="">
       </div>
       <div class="input-field">
-        <b>Tipo:</b> <input type="text" id="tipo" disabled [(ngModel)]="pet.tipo" placeholder="">
+        <b>Apellido:</b> <input type="text" id="apellido" [(ngModel)]="user.last_name" placeholder="">
       </div>
       <div class="input-field">
-        <b>Email:</b> <input type="email" id="email" disabled [(ngModel)]="pet.email" placeholder="">
+        <b>Nombre de usuario:</b> <input type="text" id="nombre de usuario" [(ngModel)]="user.username" placeholder="">
       </div>
-      <button class="btn-small indigo" (click)="action='view'">Guardar cambios</button>
+      <div class="input-field">
+        <b>Foto de perfil:</b> <input type="file" (change)="uploadImage($event)" id="imagen" placeholder="">
+        <p>porcentaje : {{porcentaje | async}}</p>
+      </div>
+      <div class="input-field">
+        <b>Email:</b> <input type="email" id="email" disabled [(ngModel)]="user.email" placeholder="">
+      </div>
+      <button class="btn-small indigo" (click)="updateUser(this.user)">Guardar cambios</button>
     </div>
   </div>
 </div>

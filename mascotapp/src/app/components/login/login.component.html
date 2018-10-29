@@ -7,34 +7,47 @@
   </div>
   <div class="row">
     <div class="col s6 offset-s3">
-      <div class="col s12 input-field">
-        <input type="text" id="nombre">
+      <!-- <div class="col s12 input-field" *ngIf="!login">
+        <input type="text" id="nombre" [(ngModel)]="user.name">
         <label for="nombre">Nombre</label>
       </div>
+      <div class="col s12 input-field" *ngIf="!login">
+        <input type="text" id="apellido" [(ngModel)]="user.last_name">
+        <label for="apellido">Apellido</label>
+      </div> -->
       <div class="col s12 input-field">
-        <input type="email" id="email">
+        <input type="email" id="email" [(ngModel)]="user.email">
         <label for="email">Email</label>
       </div>
-      <div class="input-field col s12">
-        <select>
+      <!-- <div class="input-field col s12" [ngClass]="{'hide': login}">
+        <select id="selection">
           <option value="" disabled selected>Tipo de mascota</option>
           <option value="perro">perro</option>
           <option value="gato">gato</option>
           <option value="otro">otro</option>
         </select>
+      </div> -->
+      <div class="col s12" *ngIf="error_pass">
+        <small class="red-text">¡Las contraseñas no coinciden!</small>
       </div>
       <div class="col s12 input-field">
-        <input type="password" id="password">
+        <input type="password" id="password" [(ngModel)]="password">
         <label for="password">contraseña</label>
       </div>
-      <div class="col s12 input-field">
-        <input type="password" id="password2">
+      <div class="col s12 input-field" *ngIf="!login">
+        <input type="password" id="password2" [(ngModel)]="pass_confirmation">
         <label for="password2">confirmar contraseña</label>
       </div>
-    </div>
-    <div class="col s12 center-align">
-      <p *ngIf="action==='login'">¿Aún no tienes cuenta? <a (click)="action='register'">Regístrate!</a></p>
-      <p *ngIf="action==='register'">¿Ya tienes cuenta? <a (click)="action='login'">Ingresa!</a></p>
+      <button class="btn btn-full indigo" *ngIf="login" (click)="signInEmail()">Ingresar</button>
+      <button class="btn btn-full indigo" *ngIf="!login" (click)="registerEmail()">Registrarse</button>
+      <div class="col s12 center-align">
+        <p *ngIf="login">¿Aún no tienes cuenta? <a (click)="actionRegister()">Regístrate con tu Email!</a></p>
+        <p *ngIf="!login">¿Ya tienes cuenta? <a (click)="actionRegister()">Ingresa!</a></p>
+      </div>
+      <div class="col s12">
+        <p class="center-align">O ingresa con:</p>
+      </div>
+      <button class="btn btn-full indigo" *ngIf="login" (click)="signInFacebook()">Facebook</button>
     </div>
   </div>
 </div>

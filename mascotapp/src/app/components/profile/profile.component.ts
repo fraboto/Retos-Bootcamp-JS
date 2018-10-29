@@ -1,9 +1,11 @@
-import { PostsService } from './../../services/posts.service';
-import { Post } from './../../interfaces/post';
+import { AuthenticationService } from './../../services/authentication.service';
+import { map, finalize } from 'rxjs/operators';
+import { User } from 'src/app/interfaces/user';
 import { Component, OnInit } from '@angular/core';
-import { PetsService } from 'src/app/services/pets.service';
-import { Pet } from 'src/app/interfaces/pet';
-import { ActivatedRoute } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
+import { auth } from 'firebase';
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-profile',
@@ -12,16 +14,49 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
 
-  pet: Pet;
-  petKey: any;
-  petPosts: Post[];
+  user: User;
+  uid: any;
   action = "view";
+  url: Observable<string>;
+  porcentaje: Observable<number>;
 
-  constructor(private petsService:PetsService, private activatedRoute:ActivatedRoute, private postsService:PostsService) { }
+  constructor(private usersService:UsersService, private angularStorage:AngularFireStorage, private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
-    this.petKey = +this.activatedRoute.snapshot.params['key'];
-    this.pet = this.petsService.getPetByKey(this.petKey);
-    this.petPosts = this.postsService.getPostsByPet(this.petKey);
+    this.authenticationService.getUserLogged( success => {
+      this.uid = success.uid;
+      this.usersService.getUserByUID(this.uid).valueChanges().subscribe( data => {
+        this.user = data;
+      }, error => {
+        console.log("Error: ", error);
+      });
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  updateUser(actualizacion)
+  {
+    this.usersService.updateUser(actualizacion);
+    this.action = 'view';
+  }
+
+  uploadImage(event)
+  {
+    const file = event.target.files[0];
+    const filePath = '/imagenes/' + file.name;
+    const fileRef = this.angularStorage.ref(filePath);
+    const task = this.angularStorage.upload(filePath, file);
+    this.porcentaje = task.percentageChanges();
+    task.snapshotChanges().pipe( finalize(() => {
+        this.url = fileRef.getDownloadURL();
+        this.url.subscribe( url => {
+          this.user.image = url;
+        });
+      }))
+      .subscribe((data) => {
+        console.log("imagen", data);
+    }); 
+    
   }
 }
