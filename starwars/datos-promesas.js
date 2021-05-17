@@ -1,5 +1,5 @@
 //PROMESAS
-var api_sw = "https://swapi.co/api/"; //dirección del api de STAR WARS
+var api_sw = "https://swapi.dev/api/"; //dirección del api de STAR WARS
 var datos = []; //variable qe guardará la información traída del api
 var titulo_pagina = document.getElementById("titulo-ppal"); //variable que atrapará qué página está siendo deplegada
 var asunto = titulo_pagina.innerHTML; //página que se está desplegando
